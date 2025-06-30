@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "practice_areas",
+  "info": {
+    "singularName": "practice-area",
+    "pluralName": "practice-areas",
+    "displayName": "PracticeArea"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "corporate-law",
+        "family-law",
+        "civil-litigation",
+        "criminal-defense",
+        "real-estate-law",
+        "intellectual-property",
+        "immigration-law",
+        "employment-law",
+        "tax-law",
+        "constitutional-law",
+        "contract-law",
+        "estate-planning",
+        "notary-services",
+        "compliance-law",
+        "mediation-law",
+        "general-practice",
+        "cyber-law",
+        "forensic-law",
+        "data-privacy-law",
+        "human-rights-law",
+        "juvenile-law",
+        "elder-law",
+        "media-law",
+        "defamation-law",
+        "surveillance-law",
+        "digital-rights-law",
+        "property-law",
+        "tenant-law",
+        "public-interest-law",
+        "environmental-law"
+      ]
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "PracticeArea"
+    }
+  }
+}
