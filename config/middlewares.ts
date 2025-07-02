@@ -4,10 +4,10 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:5173'], // your frontend Vite dev server
+      origin: ['https://khusilawgroup.netlify.app', 'http://localhost:5173'], // add your frontend URLs
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-      headers: '*',
-      credentials: true,
+    // headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'], // optional
+    credentials: true,
     },
   },
   'strapi::security',
