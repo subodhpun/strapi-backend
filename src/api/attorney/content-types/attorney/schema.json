@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attorneys",
+  "info": {
+    "singularName": "attorney",
+    "pluralName": "attorneys",
+    "displayName": "Attorney"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Post": {
+      "type": "string"
+    },
+    "Education": {
+      "type": "string"
+    },
+    "BarAdmission": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "integer"
+    },
+    "Email": {
+      "type": "email"
+    }
+  }
+}

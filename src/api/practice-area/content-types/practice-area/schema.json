@@ -58,6 +58,9 @@
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "PracticeArea"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

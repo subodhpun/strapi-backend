@@ -449,6 +449,40 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAttorneyAttorney extends Struct.CollectionTypeSchema {
+  collectionName: 'attorneys';
+  info: {
+    displayName: 'Attorney';
+    pluralName: 'attorneys';
+    singularName: 'attorney';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BarAdmission: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Education: Schema.Attribute.String;
+    Email: Schema.Attribute.Email;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::attorney.attorney'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    Phone: Schema.Attribute.Integer;
+    Post: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPracticeAreaPracticeArea
   extends Struct.CollectionTypeSchema {
   collectionName: 'practice_areas';
@@ -465,6 +499,7 @@ export interface ApiPracticeAreaPracticeArea
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     icon: Schema.Attribute.Enumeration<
       [
         'corporate-law',
@@ -1025,6 +1060,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
+      'api::attorney.attorney': ApiAttorneyAttorney;
       'api::practice-area.practice-area': ApiPracticeAreaPracticeArea;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
